@@ -65,4 +65,26 @@
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
 	</ThingDef>
+	
+	<!-- Choco Paste -->
+	<ThingDef ParentName="MealRottable">
+		<defName>MealChocoPaste</defName>
+		<label>Chocolate paste meal</label>
+		<description>A chocolate paste meal made of coco beans from the Chocolate Paste Dispenser.</description>
+		<graphicData>
+			<texPath>Things/Item/Meal/ChocoPaste</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>18</MarketValue>
+			<Nutrition>0.9</Nutrition>
+		</statBases>
+		<ingestible>
+			<preferability>MealFine</preferability>
+				<tasteThought>AteChocoPasteMeal</tasteThought>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
+		</ingestible>
+	</ThingDef>
+	
 </Defs>

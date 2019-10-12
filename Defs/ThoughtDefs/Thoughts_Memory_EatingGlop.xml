@@ -24,4 +24,17 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AteChocoPasteMeal</defName>
+		<durationDays>1</durationDays>
+		<stages>
+			<li>
+				<label>ate chocolate paste meal</label>
+				<description>I ate a chocolate paste meal, tasty!</description>
+				<baseMoodEffect>+6</baseMoodEffect> 
+			</li>
+		</stages>
+	</ThoughtDef>
+	
 </Defs>

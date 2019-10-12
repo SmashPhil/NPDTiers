@@ -303,4 +303,90 @@
 		</modExtensions>
 		
 	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>ChocoNutrientPaste</defName>
+		<label>chocolate paste dispenser</label>
+		<description>using a recycled nutrient paste dispenser, you can create yourself a fine chocolate paste dispenser!</description>
+		<thingClass>Building_NutrientPasteDispenser</thingClass>
+		
+		<graphicData>
+			<texPath>Things/Building/Production/PNutrientDispenser</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<color>(160,93,0)</color>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3,4)</drawSize>
+			<damageData>
+				<rect>(0.02,0.25,2.96,2.85)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+			</damageData>
+			<shadowData>
+				<volume>(2.87,0.75,3.05)</volume>
+				<offset>(0,0,0.38)</offset>
+			</shadowData>
+		</graphicData>
+		
+		<size>(3,4)</size>
+		<interactionCellOffset>(0,0,3)</interactionCellOffset>
+		
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		
+		<statBases>
+			<WorkToBuild>1500</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>0.4</Flammability>
+		</statBases>
+		
+		<building>
+			<isMealSource>true</isMealSource>
+			<wantsHopperAdjacent>true</wantsHopperAdjacent>
+			<nutritionCostPerDispense>0.2</nutritionCostPerDispense>
+			<soundDispense>DispensePaste</soundDispense>
+		</building>
+		
+		<comps>
+			<li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<basePowerConsumption>400</basePowerConsumption>
+			</li>
+			
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		
+		<costList>
+			<Steel>250</Steel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+		</costList>
+		
+		<socialPropernessMatters>true</socialPropernessMatters>
+		
+		<hasInteractionCell>true</hasInteractionCell>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Production</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc6</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		
+		<researchPrerequisites>
+			<li>NutrientPaste</li>
+		</researchPrerequisites>
+
+		<modExtensions>
+			<li Class="NutrientPasteTiers.NutrientPasteCustom">
+				<customMeal>MealChocoPaste</customMeal>
+				<mysteryIngredients>false</mysteryIngredients>
+				<ingredientList>
+					<Chocolate>0.6</Chocolate>
+				</ingredientList>
+			</li>
+		</modExtensions>
+		
+	</ThingDef>
+	
 </Defs>
