@@ -81,14 +81,16 @@ namespace NutrientPasteTiers
                 }
                 List<ThingDef> list = new List<ThingDef>();
                 List<IngredientAndCostClass> ingredientList = __instance.def.GetModExtension<NutrientPasteCustom>().ingredientList;
-                float[] nutritionLeft = new float[ingredientList.Count];
-                for(int i = 0; i < nutritionLeft.Length; i++)
-                {
-                    nutritionLeft[i] = ingredientList[i].nutritionCost;
-                }
-                if (!ingredientList.Any() || !(ingredientList is null) )
-                {
-                    for(; ;)
+                bool empty = !__instance.def.GetModExtension<NutrientPasteCustom>().ingredientList.Any();
+                Log.Message("-" + empty);
+                if (!empty)
+                {            
+                    float[] nutritionLeft = new float[ingredientList.Count];
+                    for (int i = 0; i < nutritionLeft.Length; i++)
+                    {
+                        nutritionLeft[i] = ingredientList[i].nutritionCost;
+                    }
+                    for (; ;)
                     {
                         Thing thing = __instance.def.GetModExtension<NutrientPasteCustom>().FindNextIngredientInHopper(___cachedAdjCellsCardinal, __instance, nutritionLeft);
                         if (thing is null) break;
@@ -105,6 +107,7 @@ namespace NutrientPasteTiers
                 }
                 else
                 {
+                    Log.Message("2");
                     float num = __instance.def.building.nutritionCostPerDispense - 0.0001f;
                     for (; ; )
                     {
@@ -290,7 +293,8 @@ namespace NutrientPasteTiers
                 }
                 
                 float num = 0f;
-                bool empty = !__instance.def.GetModExtension<NutrientPasteCustom>().ingredientList.Any();
+                bool empty = __instance.def.GetModExtension<NutrientPasteCustom>().ingredientList is null ||
+                    !__instance.def.GetModExtension<NutrientPasteCustom>().ingredientList.Any();
                 if (!empty)
                 {
                     __result = false;

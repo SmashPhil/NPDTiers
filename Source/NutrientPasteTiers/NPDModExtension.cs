@@ -10,7 +10,7 @@ namespace NutrientPasteTiers
 
         public bool mysteryIngredients = false;
 
-        public List<IngredientAndCostClass> ingredientList;
+        public List<IngredientAndCostClass> ingredientList = new List<IngredientAndCostClass>();
 
         public Thing FindNextIngredientInHopper(List<IntVec3> cachedCells, Building_NutrientPasteDispenser instance, float[] nutrition)
         {
