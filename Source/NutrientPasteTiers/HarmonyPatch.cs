@@ -82,7 +82,6 @@ namespace NutrientPasteTiers
                 List<ThingDef> list = new List<ThingDef>();
                 List<IngredientAndCostClass> ingredientList = __instance.def.GetModExtension<NutrientPasteCustom>().ingredientList;
                 bool empty = !__instance.def.GetModExtension<NutrientPasteCustom>().ingredientList.Any();
-                Log.Message("-" + empty);
                 if (!empty)
                 {            
                     float[] nutritionLeft = new float[ingredientList.Count];
@@ -107,7 +106,6 @@ namespace NutrientPasteTiers
                 }
                 else
                 {
-                    Log.Message("2");
                     float num = __instance.def.building.nutritionCostPerDispense - 0.0001f;
                     for (; ; )
                     {
